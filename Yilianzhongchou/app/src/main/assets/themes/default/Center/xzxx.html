@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+    <!--     <link rel="stylesheet" type="text/css" href="file:///android_asset/css/jquery.mobile-1.4.5.min.css"/> -->
+
+</head>
+<body>
+<div class="bg" id="bg_height" style="background-image: url('file:///android_asset/img/bg.jpg')">
+    <div class="top" style="background: none!important;">
+        <div class="top-main">
+            <div class="top-l">
+                <a href="{:url('home/Index/index')}"> <img src="file:///android_asset/img/back.png"
+                                                           alt="" width="30" height="30"> </a>
+            </div>
+            <div class="top-c">
+
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+            #day option{width:50%;display: inline-block;min-height: auto;}
+
+    </style>
+    <div class="lr_form">
+        <h1 style="margin: 80px 0px">选择学校</h1>
+        <div data-role="main" class="ui-content" style="padding: 0!important;">
+            <!--<form method="post" action="callAndroid()">-->
+            <fieldset data-role="fieldcontain" style="width:100%;margin:0 auto;border:none;">
+                <select name="day" id="day"
+                        style="line-height: 40px;height:40px;border:1px solid #fff;border-radius:2px;font-size: 14px;color: #333;padding-left: 10px;width: 100%;">
+                    <option value="mon">请选择学校</option>
+                    <option value="tue">石家庄三十五中学</option>
+                </select>
+            </fieldset>
+            <div data-role="main" class="ui-content">
+                <input type="submit" onclick="callAndroid()" value="提交"
+                       style="line-height: 40px;height:40px;border:1px solid #fff;border-radius:2px;font-size: 18px!important;color: #333;padding-left: 10px;width: 100%;margin-top:20px;background:#0195ff;border:none;color: #fff;font-size: 16px;">
+            </div>
+            <!--</form>-->
+        </div>
+        <script>
+          function callAndroid(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://webview?arg1=111&arg2=222";
+          }
+        </script>
+    </div>
+    <!--         <div class="footer">
+        <ul class="nav">
+            <li ><a href="#"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></a></li>
+            <li class="active"><a href="#"><img src="file:///android_asset/img/hui-dengji.png" width="80" height="60" alt=""></a></li>
+            <li ><a href="#"><img src="file:///android_asset/img/hui-xueshengxinxi.png" width="80" height="60" alt=""></a></li>
+        </ul>
+    </div> -->
+</div>
+</body>
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("height", hei);
+    })
+
+</script>
+
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+            });
+        });
+         function callAndroid(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://webview?arg1=111&arg2=222";
+         }
+    });
+
+</script>
+</html>

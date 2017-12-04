@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+    <link rel="stylesheet" href="file:///android_asset/css/ion.calendar.css">
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/styles2.css" media="all">
+
+</head>
+<body>
+    <div class="bg" id="bg_height">
+        <div class="top">
+            <div class="top-main">
+                <div class="top-l">
+                    <a href="javascript:void(0)" onclick="history.go(-1);"> <img src="file:///android_asset/img/back.png" alt="" width="30" height="30"> </a>
+                </div>
+                <div class="top-c">
+                    <h3>石家庄三十五中学</h3>
+                </div>
+            </div>
+        </div>
+        <style>
+        .lr_form table tr td input{
+            width: 95% !important;
+            padding-left: 5% !important;
+            height: 30px !important;
+            line-height: 30px !important;
+            background:#dcdcdc;
+            padding: 0 !important;
+            outline: none;
+            </style>
+        <div class="lr_form" style="margin-bottom: 100px">
+            <form action="{:url('home/Center/sushe_addtwo')}" method="post">
+               <h1 style="margin: 30px 0px">登记信息</h1>
+
+               <table width="100%" class="info_table">
+                   <tr height="">
+                       <td>门条:</td>
+                       <td><input type="text" name="chuangpu" value="{$geren[0]['chuangpu']}"></td>
+                   </tr>
+                   <tr>
+                       <td>姓名:</td>
+                       <td><input type="text" name="xingming" value="{$geren[0]['xingming']}"></td>
+                   </tr>
+                   <tr>
+                       <td>学号:</td>
+                       <td> <input type="text" name="xuehao" value="{$geren[0]['xuehao']}"></td>
+                   </tr>
+                   <tr>
+                       <td>类型:</td>
+                       <td> <input type="text" name="fenlei" value="{$fenlei}"></td>
+                   </tr>
+                    <tr>
+                       <td>日期:</td>
+                       <td> <input type="text" name="riqi" value="{$geren[0]['riqi']}"></td>
+                   </tr>
+                  
+                      
+                       <!-- <td rowspan="2">  <input type="text" name="beizhu" placeholder="请输入"></td> -->
+                  
+               </table>
+                <input type="text" name="fname" id="fname" placeholder="备注:" style="width: 80%;height: 35px">
+                <!-- <div class="iDate date" style="margin-bottom: 20px">
+                    <input type="text" placeholder="日期" style="float:right;border: none;height: auto;text-align: center">
+                    <button type="button" class="addOn"><span style="float: left;margin-left: 20px">日期：</span></button>
+                </div> -->
+               <style>
+               .xinxi-list ul{
+                list-style:none;
+               }
+               .xinxi-list ul li{
+                 width: 100%;
+                 height: 35px;
+                 line-height: 35px;
+                 position: relative;
+                 text-align:left;
+                 font-size: 16px;
+                 color: #666;
+               }
+                .xinxi-list ul li input{
+                     width: 90%;
+                     height: 28px;
+                     padding-left: 5%;
+                     border: 1px solid #fff;
+                     outline: none;
+                }
+               .xinxi-list ul li span{
+                display: inline-block;
+                width: 20px;
+                text-align:center;
+               
+                text-align: center;
+                line-height: 20px;
+                height: 20px;
+                position:absolute;
+                right: 10px;
+                font-size:15px;
+                background:red; 
+                color:#fff;
+                top: 5px;
+               }
+               </style>
+                <div class="add_info" style="overflow: auto">
+                <div class="xinxi-list">
+                  <ul>
+                   {foreach name="weigui" item="wei"}
+                    <li><input type="text" name="jilu[]" value="{$wei}"><span>×</span></li>
+                   {/foreach}
+                  </ul>
+                </div>
+
+                    
+                </div>
+                 <div style="float: right;margin: 0 20px 20px 0">
+                        <a href="{:url('home/Center/sushe_tianjia')}" style="width: 60px; height: 30px;background-color: #0096ff;color: #fff;display: block;line-height: 30px;border-radius: 5px">添加</a>
+                    </div>
+
+                <div>
+                    <input type="submit" value="提交" style="width: 90%; height: 40px;background-color: #0096ff;color: #fff;display: block;line-height: 40px;border-radius: 5px;margin: 30px 5%">
+                </div>
+            </form>
+           
+        </div>
+        <div class="footer">
+               <ul class="nav">
+              <li ><a href="{:url('home/Center/chayue')}"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></a></li>
+            <li class="active"><a href="{:url('home/Center/sushe')}"><img src="file:///android_asset/img/lan-dengji.png" width="80" height="60" alt=""></a></li>
+            <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_asset/img/hui-xueshengxinxi.png" width="80" height="60" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/moment.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/bootstrap-datetimepicker.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("min-height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    /*日历插件*/
+    $(document).ready(function(){
+        // date time picker
+        if($(".iDate.full").length>0){
+            $(".iDate.full").datetimepicker({
+                locale: "zh-cn",
+                format: "YYYY-MM-DD a hh:mm",
+                dayViewHeaderFormat: "YYYY年 MMMM"
+            });
+        }
+        if($(".iDate.date").length>0){
+            $(".iDate.date").datetimepicker({
+                locale:"zh-cn",
+                format:"YYYY-MM-DD",
+                dayViewHeaderFormat:"YYYY年 MMMM"
+            });
+        }
+    })
+</script>
+
+ <script>
+               $(".xinxi-list ul li span").click(function(){
+            
+                  $(this).parent().remove();
+               })
+            </script>
+
+</html>

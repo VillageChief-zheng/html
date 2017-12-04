@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+    <link rel="stylesheet" href="css/ion.calendar.css">
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/styles2.css" media="all">
+    <link type="text/css" rel="stylesheet" href="file:///android_asset/css/jquery.mobile-1.4.5.min.css" />
+
+</head>
+<body>
+<div class="bg" id="bg_height">
+    <div class="top">
+        <div class="top-main">
+            <div class="top-l">
+            </div>
+            <div class="top-c">
+                <h3>石家庄三十五中学</h3>
+            </div>
+            <style>
+                .top{
+                    position: relative;
+                }
+                .shezhi{
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    right: 10px;
+                    margin: auto;
+                    bottom:10px;
+
+                }
+                .shezhi a img{
+                    width: 30px;
+                    height: 30px;
+                }
+            </style>
+            <!--<div class="shezhi">-->
+                <!--<a href="{:url('home/Center/tuichu')}"><img src="file:///android_asset/img/szsz.png" alt=""></a>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="lr_form" style="width: 100%;margin: 0;">
+        <div data-role="page" style="margin-bottom: 80px;">
+            <div data-role = "content-floud">
+                <div style="font-family: '微软雅黑';">
+                    <ul id="hear">
+                        <li><a href="{:url('home/Center/chayue')}" style="width:100%;display: inline-block;" >过往信息</a></li>
+                        <li class="action" style="background-color: #0195ff;color: #fff;border-radius: 5px;">总览</li>
+
+                    </ul>
+                    <style>
+                        .ui-field-contain label{
+                            display: inline-block;
+                            float: left;
+                            height: 38px;
+                            line-height: 38px;
+                            width:20%;
+                            text-align:right;
+                        }
+                        .ui-field-contain{
+                            padding: 0 !important;
+                        }
+                        .ui-field-contain input{
+                            width: 75% !important;
+                            outline: none;
+                            border: 1px solid #ccc;
+                        }
+                        .pphh label{
+                            display: inline-block;
+                            float: left;
+                            height: 36px;
+                            line-height: 36px;
+                            width:20%;
+                            text-align:right;
+                        }
+                         .pphh input{
+                            width: 65% !important;
+                            outline: none;
+                            height: 34px !important;
+                            border: 1px solid #ccc;
+                            padding-left: 5%;
+                            color:#333;
+                        }
+                        </style>
+
+                    <form method="post" action="{:url('home/Center/cha')}">
+                        <input type="hidden" name="yangshi" value="1">
+                        <div class="ui-field-contain" style="margin: 0px 5%;margin-bottom: 10px">
+                            <label>起始:</label>
+                            <input style="padding: 5px 0;" type="date" name="bday1" placeholder="起始时间">
+                        </div>
+
+                        <div class="ui-field-contain" style="margin: 0px 5%;">
+                            <label>结束:</label>
+                            <input style="border:1px solid #ccc;padding: 5px 0" type="date" name="bday2" placeholder="结束时间">
+                        </div>
+                        <div class="pphh" style="width: 90%;margin:  5%;">
+                            <label>年级</label>
+                            <input style="border:1px solid #ccc;" type="text" name="nianji">
+                        </div>
+                        <div class="pphh" style="width: 90%;margin:  5%;">
+                            <label>班级</label>
+                            <input style="border:1px solid #ccc;" type="text" name="banji">
+                        </div>
+                        <div class="pphh" style="width: 90%;margin:  5%;">
+                            <label>宿舍号</label>
+                            <input style="border:1px solid #ccc;" type="text" name="sushe">
+                        </div>
+                        <div class="pphh" style="width: 90%;margin: 5%;">
+                            <label>姓名</label>
+                            <input style="border:1px solid #ccc;" type="text" name="xingming">
+                        </div>
+                        <div><input type="submit" value="查询"  style="width: 90%; height: 40px;border-radius: 5px;background-color: #0195ff;color: #fff;font-size: 20px;margin: 10px 0px;display: block;line-height: 40px;margin:10px auto;border:none;margin-bottom: 20px;"> </div>
+                    </form>
+
+                    <style>
+                            table{
+                                margin: 0 auto;
+                                background: #fff;
+                               padding:0px 0 30px 0;
+                                border: 1px solid #ccc;
+                                margin-bottom: 20px;
+                            }
+                            .dandu1 th{
+                                color:#333;
+                                font-size: 16px;
+                                font-family: sans-serif;
+                                padding: 2px;
+
+                            }
+                            .dandu2 td{
+                                padding: 20px 2px 2px 2px;
+                                color: #47B0D7;
+                                font-size: 15px;
+                                font-family: sans-serif;
+
+                            }
+                            .year td{
+                                border: none !important;
+                            }
+
+                            .ph{
+                            margin: 0 5%;
+                            border: none
+                           }
+                              .ph tr:first-child {
+                                border-top: 1px solid #ccc;
+                                        }
+
+
+                            .ph tr th{
+                                width: 26%;
+                                padding-right: 3%;
+                                text-align:right;
+                                line-height: 30px;
+                                border-right:1px solid #ccc ;
+                                border-top: 1px solid #ccc;
+                                color:#333;
+                                font-size:15px;
+                            }
+                            .ph tr:last-child th{
+                                border-bottom: 1px solid #ccc
+                            }
+                            .ph tr:last-child td{
+                                border-bottom: 1px solid #ccc
+                            }
+                            .ph tr td{
+                                text-align: left;
+                                width: 67%;
+                                padding-left: 2%;
+                                line-height: 30px;
+                                 border-top: 1px solid #ccc;
+                                   color:#47B0D7;
+                                font-size:15px;
+                            }
+                        </style>
+
+
+                    {foreach name="chanxun" item="cha"}
+                    <div class="yaer" >
+                        <table class="ph" width="90%" border="0" cellpadding="0" cellspacing="0">
+                            <tr> <th>宿舍号：</th><td>{$cha['longceng']}#{$cha['sushe']}</td></tr>
+                            <tr> <th>班级：</th><td>{$cha['nianji']}({$cha['banji']})</td></tr>
+                            <tr> <th>学生姓名:</th><td>{$cha['xingming']}</td></tr>
+                            <tr> <th>违纪内容:</th><td>{$cha['fenlei']}</td></tr>
+                            <tr> <th>检查时间:</th><td>{$cha['riqi']|date='Y-m-d',###}</td></tr>
+                            <tr> <th>量化：</th><td>{$cha['fen']}</td></tr>
+                            <tr> <th>扣分原因:</th><td>{$cha['yuanyin']}</td></tr>
+                        </table>
+                        <!-- <table border="0" width="90%" align="center">
+                            <tr class="dandu1">
+                                <th >宿舍号</th> <th>班级</th> <th>学生姓名</th> <th>违纪内容</th> <th>检查时间</th>
+                            </tr>
+                            <tr class="dandu2">
+                                <td>{$cha['sushe']}</td> <td>{$cha['nianji']}({$cha['banji']})</td> <td>{$cha['xingming']}</td> <td>{$cha['fenlei']}</td>
+                                <td>{$cha['riqi']|date='Y-m-d',###}
+                                </td>
+                            </tr>
+                        </table>  -->
+                    </div>
+                    {/foreach}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="nav">
+            <li class="active" onclick="callAndroid1()"><img
+                    src="file:///android_asset/img/lan-chayue.png" width="80" height="60" alt=""></li>
+            <!--{if condition= "$erji neq '老师管理员'"}-->
+            <li onclick="callAndroid2()"><img src="file:///android_asset/img/hui-dengji.png" width="80"
+                                              height="60" alt=""></li>
+            <!--{else}-->
+            <!--<li onclick="callAndroid2()"><img src="file:///android_asset/img/hui-dengji.png" width="80" height="60" alt=""></li>-->
+            <!--{/if}-->
+            <li onclick="callAndroid3()"><img src="file:///android_asset/img/hui-xueshengxinxi.png"
+                                              width="80" height="60" alt=""></li>
+        </ul>
+        <script>
+          function callAndroid1(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://chayue?arg1=111&arg2=222";
+          }
+           function callAndroid2(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://sushe?arg1=111&arg2=222";
+          }
+           function callAndroid3(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xuesheng?arg1=111&arg2=222";
+          }
+
+    </script>
+    </div>
+</div>
+</body>
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/moment.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/bootstrap-datetimepicker.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    /*日历插件*/
+    $(document).ready(function(){
+        // date time picker
+        if($(".iDate.full").length>0){
+            $(".iDate.full").datetimepicker({
+                locale: "zh-cn",
+                format: "YYYY-MM-DD a hh:mm",
+                dayViewHeaderFormat: "YYYY年 MMMM"
+            });
+        }
+        if($(".iDate.date").length>0){
+            $(".iDate.date").datetimepicker({
+                locale:"zh-cn",
+                format:"YYYY-MM-DD",
+                dayViewHeaderFormat:"YYYY年 MMMM"
+            });
+        }
+    })
+</script>
+
+
+</html>

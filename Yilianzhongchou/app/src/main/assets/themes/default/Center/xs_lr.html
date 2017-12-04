@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+
+</head>
+<body>
+    <div class="bg" id="bg_height" style="margin-bottom: 80px;">
+        <div class="top">
+            <div class="top-main">
+                <div class="top-l">
+                    <a href="javascript:void(0)" onclick="history.go(-1);"> <img src="file:///android_asset/img/back.png" alt="" width="30" height="30"> </a>
+                </div>
+                <div class="top-c">
+                    <h3>石家庄三十五中学</h3>
+                </div>
+            </div>
+        </div>
+        <div class="lr_form">
+            <!--<form action="{:url('/home/Center/xue_add')}" method="post">-->
+               <h1>学生信息录入</h1>
+                <div class="form-type">
+                    <input id="xingbie" type="text"  name="xingbie" placeholder="性别：男/女">
+                </div>
+                <div class="form-type">
+                    <input id="louceng" type="text" name="louceng" placeholder="楼层">
+                </div>
+                <div class="form-type">
+                    <input id="nianji" type="text" name="nianji" placeholder="年级">
+                </div>
+                <div class="form-type">
+                    <input id="banji" type="text" name="banji" placeholder="班级">
+                </div>
+                <div class="form-type">
+                    <input id="sushe" type="text"  name="sushe" placeholder="宿舍">
+                </div>
+                <div class="form-type">
+                    <input id="chuangpu" type="text" name="chuangpu"  placeholder="床铺">
+                </div>
+                 <div class="form-type">
+                    <input id="name" type="text" name="xingming" placeholder="姓名">
+                </div>
+                <div class="form-type">
+                    <input id="xuehao" type="number" name="xuehao" placeholder="学号">
+                </div>
+                <div class="form-btn">
+                    <input type="submit" value="提交" onclick="callAndroid()">
+                </div>
+            <!--</form>-->
+            <script>
+              function callAndroid(){
+                               /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+                                var xingbie=document.getElementById("xingbie").value;
+                                var louceng=document.getElementById("louceng").value;
+                                var nianji=document.getElementById("nianji").value;
+                                var banji=document.getElementById("banji").value;
+                                var sushe=document.getElementById("sushe").value;
+                                var chuangpu=document.getElementById("chuangpu").value;
+                                var name=document.getElementById("name").value;
+                                var xuehao=document.getElementById("xuehao").value;
+
+                                document.location = "js://sushe_add?xingbie="+xingbie+"&louceng="+louceng+"&nianji="+nianji+"&banji="+banji+"&sushe="+sushe+"&chuangpu="+chuangpu+
+                                "&name="+name+ "&xuehao="+xuehao;
+                              }
+
+            </script>
+        </div>
+        <div class="footer">
+            <ul class="nav">
+                <li onclick="callAndroid1()"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></li>
+                <li onclick="callAndroid2()"><img src="file:///android_asset/img/hui-dengji.png" width="80" height="60" alt=""></li>
+                <li onclick="callAndroid3()"class="active"><img src="file:///android_asset/img/lan-xueshengxinxi.png" width="80" height="60" alt=""></li>
+                <!-- <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_assetimg/hui-jiaoxue.png" width="80" height="60" alt=""></a></li> -->
+            </ul>
+            <script>
+          function callAndroid1(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://chayue?arg1=111&arg2=222";
+          }
+           function callAndroid2(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://sushe?arg1=111&arg2=222";
+          }
+           function callAndroid3(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xuesheng?arg1=111&arg2=222";
+          }
+        </script>
+
+        </div>
+       </div>
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="file:///android_asset/css/style.css">
+</head>
+<body>
+<style>
+    ul{
+        list-style: none;
+        display: flex;
+        text-align: center;
+        border-bottom:1px solid #ccc ;
+        border-top: 1px solid #ccc;
+        background: #f0f0f0;
+
+    }
+    .gai ul li{
+        position: relative;
+        display: block;
+        flex: 1;
+        color:#333;
+        font-size: 14px;
+        padding: 10px 0 30px 0;
+        border-left: 1px solid #ccc;
+    }
+    .show .yin{
+        display: block;
+    }
+    .xb{
+        width: 22px;
+        height:22px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 5px;
+        cursor: pointer;
+    }
+    .yin{
+        border-left: 1px solid #ccc;
+        position: absolute;
+        top: 60px;
+        left: -1px;
+        width: 100%;
+        display: none;
+        background: #f0f0f0;
+    }
+    select{
+        width: 100%;
+        border: none;
+        color: #888;
+        line-height: 40px;
+        font-size: 14px;
+        border-left: 1px solid #f0f0f0;
+        border-right: 1px solid #f0f0f0;
+        outline: none;
+    }
+    option{
+
+        color: #888;
+        height: 40px;
+        line-height: 40px;
+    }
+    .yin .zr .div{
+        position: relative;
+        width: 95%;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 5%;
+        text-align:left;
+        font-size: 14px;
+        color: #888;
+        border-bottom: 1px solid #ccc;
+    }
+    .wj{
+        display: none;
+    }
+    .dui{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        top: 0;
+        font-size: 14px;
+        text-align: right;
+        bottom: 0;
+        color:red;
+        right: 5px;
+        display: none;
+    }
+    .show1 .dui{
+        display: block;
+    }
+    .yin .zr1 .div{
+          height: 30px;
+          line-height: 30px;
+          width: 100%;
+          text-align:center;
+          font-size: 14px;
+          color: #888;
+          border-bottom: 1px solid #ccc;
+      }
+    .yin .zr11 .div{
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align:center;
+        font-size: 14px;
+        color: #888;
+        border-bottom: 1px solid #ccc;
+    }
+    .yin .zrr .div{
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align:center;
+
+        border-bottom: 1px solid #ccc;
+    }
+    .yin .zrr .div a{
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        font-size: 14px;
+        color: #888;
+    }
+    .yin .zrr .div a:hover{
+        text-decoration: none;
+        background: #fff;
+    }
+    .zr1 .div:hover{
+        background: #fff;
+        cursor: pointer;
+    }
+    .wj{
+        width: 80%;
+        padding: 10px;
+        margin: auto;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: red;
+        padding-top: 20px;
+    }
+    .delete{
+        position: absolute;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+        height: 20px;
+        top: 5px;
+        right: 5px;
+        color:#fff;
+        font-size: 25px;
+        z-index: 9;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        display: inline-block;
+    }
+
+    .top {
+        height: 80px;
+        width: 100%;
+        background-color: #0195ff;
+        color: #fff;
+    }
+    .top-main {
+         padding-top: 40px;
+    }
+    .top-l {
+        float: left;
+        width: 10%;
+    }
+    .top-c {
+        text-align: center;
+        width: 80%;
+        float: right;
+        margin-right: 10%;
+    }
+    .top-c h3 {
+        font-size: 20px!important;
+    }
+
+
+</style>
+
+<div class="big">
+    <div class="top">
+        <div class="top-main">
+            <div class="top-l">
+                <a href="javascript:void(0)" onclick="history.go(-1);"> <img src="file:///android_asset/img/back.png" width="30" height="30"> </a>
+            </div>
+            <div class="top-c">
+                <h3>石家庄三十五中学</h3>
+            </div>
+        </div>
+    </div>
+<style>
+.gai-list{
+    border-left: 1px solid #ccc;
+    width: 100%;
+    position:absolute;
+    left: 0;
+    top: 60px;
+    left: -1px;
+}
+.gai-list div{
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    border-bottom: 1px solid #ccc;
+     border-right: 1px solid #ccc;
+}
+
+</style>
+    <div class="gai">
+        <div class="ul">
+            <ul>
+                <li>性别
+                    <img class="xb"  src="file:///android_asset/img/xiala_03.png" alt="">
+                    <div class="gai-list">
+                         {if condition = '$xingbie eq 1'}
+                             <div>男</div>  
+                         {else /}
+                             <div>女</div>  
+                         {/if}
+                    </div>
+                    <div class="yin">
+                        <div class="zrr" style="text-align: center;">
+                            <div class="div"><a href="{:url('home/Center/sushe_z',array('sex'=>1))}">男</a></div>
+                            <div class="div"><a href="{:url('home/Center/sushe_z',array('sex'=>2))}">女</a></div>
+                        </div>
+
+                    </div>
+
+                </li>
+                <li>楼层
+                    <img class="xb"  src="file:///android_asset/img/xiala_03.png" alt="">
+                     <div class="gai-list">
+                             <div>{$cheng}</div>  
+                    </div>
+                    <div class="yin">
+                         {foreach name="$louceng" item="ceng"}
+                            <div class="div"><a href="{:url('home/Center/sushe_zo',array('louceng'=>$ceng['louceng'],'xingbie'=>$xingbie))}">{$ceng['louceng']}</a></div>
+                          {/foreach}
+                    </div>
+                </li>
+                <li>房间号
+                    <img class="xb"  src="file:///android_asset/img/xiala_03.png" alt="">
+                 <!--     <div class="gai-list">
+                         <div>男</div>  
+                                     </div> -->
+                    <div class="yin">
+                        <div class="zrr" style="text-align: center;">
+                            {foreach name="$sushe" item="su"}
+                            <div class="div"><a href="{:url('home/Center/sushe_zon',array('louceng'=>$cheng,'xingbie'=>$xingbie,'sushe'=>$su['sushe']))}">{$su['sushe']}</a></div>
+                          {/foreach}
+                        </div>
+                    </div>
+                </li>
+                {if condition = "$erji eq 2"}
+                <li>值日生</li>
+                {else /}
+                <li>姓名</li>
+                {/if}
+                {if condition = "$erji eq 3"}
+                <li>违纪人员</li>
+                {else /}
+                <li>备注</li>
+                {/if}
+                <li>量化</li>
+            </ul>
+        </div>
+        <!--表现列表-->
+        <div class="list-wj">
+            <div class="wj">
+               <div class="delete">×</div>
+                <div class="neirong">
+                   1
+                </div>
+            </div>
+            <div class="wj">
+                <div class="delete">×</div>
+                <div class="neirong">
+                    2
+                </div>
+            </div>
+            <div class="wj">
+                <div class="delete">×</div>
+                <div class="neirong">
+                    3
+                </div>
+            </div>
+
+        </div>
+
+        <!--扣分对应的项-->
+
+        <div class="math-wj">
+            <div class="wj">
+                <div class="delete">×</div>
+                <div class="neirong">
+                    抽烟
+                </div>
+            </div>
+            <div class="wj">
+                <div class="delete">×</div>
+                <div class="neirong">
+                    喝酒
+                </div>
+            </div>
+            <div class="wj">
+                <div class="delete">×</div>
+                <div class="neirong">
+                    宿舍不整洁
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <style>
+       .gai-btn{
+           position: absolute;
+           width: 80%;
+           height: 40px;
+           line-height: 40px;
+           text-align: center;
+
+           background: #d2d2d2;
+           border-radius: 5px;
+
+           bottom: 100px;
+           left: 10%;
+        }
+       .gai-btn a{
+           font-size: 20px;
+           color:#666;
+           text-decoration: none;
+           width: 100%;
+       }
+       .gai-btn a:hover{
+           background: red;
+           color:#fff;
+           border-radius: 5px;
+       }
+    </style>
+    <!--<div class="gai-btn"><a href="">登记学生信息</a></div>-->
+
+    <div class="footer">
+        <ul class="nav">
+            <li ><a href="{:url('home/Center/chayue')}"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></a></li>
+            <li class="active"><a href="{:url('home/Center/sushe')}"><img src="file:///android_asset/img/lan-dengji.png" width="80" height="60" alt=""></a></li>
+            <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_asset/img/hui-xueshengxinxi.png" width="80" height="60" alt=""></a></li>
+
+        </ul>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+    <script>
+
+        $(".ul ul li").click(function () {
+
+                $(this).addClass("show");
+
+        })
+
+        $(".zr .div").click(function () {
+            $(this).css('background','#fff').siblings().css('background','#f0f0f0');
+            $(this).addClass("show1").siblings().removeClass("show1");
+        })
+
+
+        $(".zr1 .div").click(function () {
+            var kj = $(this).index();
+            $(".list-wj .wj").eq(kj).show();
+        })
+        $(".zr11 .div").click(function () {
+
+            var kj = $(this).index();
+            $(".math-wj .wj").eq(kj).show();
+        })
+        $(".delete").click(function () {
+            $(".wj").hide();
+        })
+    </script>
+</body>
+</html>

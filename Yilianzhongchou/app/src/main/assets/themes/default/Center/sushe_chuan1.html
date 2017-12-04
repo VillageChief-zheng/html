@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+
+</head>
+<body>
+    <div class="bg" id="bg_height">
+        <div class="top">
+            <div class="top-main">
+                <div class="top-l">
+                    <a href="{:url('home/Center/sushe_zon',array('louceng'=>$louceng,'xingbie'=>$xingbie,'sushe'=>$sushe))}"> <img src="file:///android_asset/img/back.png" alt="" width="30" height="30"> </a>
+                </div>
+                <div class="top-c">
+                    <h3>石家庄三十五中学</h3>
+                </div>
+            </div>
+        </div>
+        <div class="lr_form">
+            <form action="">
+               <h1>宿舍号：{$sushe}</h1>
+               <style>
+                a {text-decoration:none!important;}
+
+               .find_xs table tr td a{
+                display: inline-block;
+                  position: relative;
+                  width: 100%;
+                   height:100%;
+                   line-height: 70px;
+                   width: 72px;
+                   height: 66px;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+               }
+                 .find_xs table tr td a span{
+                    display: inline-block;
+                    position: absolute;
+                    width: 100%;
+                    height: 25px;
+                    left: 0;
+                    top: 0;
+                    line-height: 25px;
+                    font-size:14px;
+                    color:#999;
+                 }
+                 .yanse a:hover{
+                 text-decoration: none;
+                 }
+                 .yanse a{
+                     background:#0195ff;
+                     color:#fff !important; 
+                 }
+                  .yanse a span{
+                    color:#fff !important; 
+                  }
+               </style>
+                <div class="find_xs">
+                      <table width="100%" border="0">                             
+                      <!--    {foreach name="$chuangpu" item="chuang"}
+                                       {if $key%3 == 0}
+                                       <tr>
+                                       {/if}
+                                         <td><a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuang['xuehao']))}">{$chuang['chuangpu']}{$chuang['xingming']}</a></td>
+                                      {if $key%3 == 2}
+                                       </tr>
+                                      {/if}
+                                      {/foreach}    -->     
+                        <tr valign="bottom" height="80">
+                            
+                            {if condition = "empty($chuangpu['左内上 1'])"}
+                            <td><a><span>左内上 1</span></a></td>
+                            {else /}
+                            <td {if condition= '$zhiri eq $chuangpu["左内上 1"]["xingming"]'} class="yanse" {/if}>
+                               {if condition= '$zhiri eq $chuangpu["左内上 1"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['左内上 1']['xuehao']))}">
+                                {$chuangpu['左内上 1']['xingming']}<span>左内上 1</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['左内上 1']['xingming']}<span>左内上 1</span>
+                                </a>
+                                {/if}
+                            </td>
+                            {/if}
+                            
+                            {if condition = "empty($chuangpu['中上 5'])"}
+                            <td><a><span>中上 5</span></a></td>
+                            {else /}
+                            <td  {if condition= '$zhiri eq $chuangpu["中上 5"]["xingming"]'} class="yanse" {/if}>
+                               {if condition= '$zhiri eq $chuangpu["中上 5"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['中上 5']['xuehao']))}">
+                                {$chuangpu['中上 5']['xingming']}<span>中上 5</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['中上 5']['xingming']}<span>中上 5</span>
+                                </a>
+                                {/if}
+                               </td>
+                            {/if}
+                            
+                            {if condition = "empty($chuangpu['右内上 7'])"}
+                            <td><a><span>右内上 7</span></a></td>
+                            {else /}
+                            <td  {if condition= '$zhiri eq $chuangpu["右内上 7"]["xingming"]'} class="yanse" {/if}>
+                             {if condition= '$zhiri eq $chuangpu["右内上 7"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['右内上 7']['xuehao']))}">
+                                {$chuangpu['右内上 7']['xingming']}<span>右内上 7</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['右内上 7']['xingming']}<span>右内上 7</span>
+                                </a>
+                                {/if}
+                            </td>
+                            {/if}
+
+                        </tr>
+                        <tr valign="bottom" height="80">
+                            
+                            {if condition = "empty($chuangpu['左内下 2'])"}
+                            <td><a><span>左内下 2</span></a></td>
+                            <td></td>
+                            {else /}
+                            <td  {if condition= '$zhiri eq $chuangpu["左内下 2"]["xingming"]'} class="yanse" {/if} > 
+                              {if condition= '$zhiri eq $chuangpu["左内下 2"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['左内下 2']['xuehao']))}">
+                                {$chuangpu['左内下 2']['xingming']}<span>左内下 2</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['左内下 2']['xingming']}<span>左内下 2</span>
+                                </a>
+                                {/if}
+                                </td>
+                            <td></td>
+                            {/if}
+                            
+                            {if condition = "empty($chuangpu['右内下 8'])"}
+                            <td><a><span>右内下 8</span></a></td>
+                            {else /}
+                             <td  {if condition= '$zhiri eq $chuangpu["右内下 8"]["xingming"]'} class="yanse" {/if} >
+                               {if condition= '$zhiri eq $chuangpu["右内下 8"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['右内下 8']['xuehao']))}">
+                                {$chuangpu['右内下 8']['xingming']}<span>右内下 8</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['右内下 8']['xingming']}<span>右内下 8</span>
+                                </a>
+                                {/if}
+                                </td>
+                             {/if}
+
+                        </tr>
+                        <tr valign="bottom" height="80">
+                            {if condition = "empty($chuangpu['左外上 3'])"}
+                            <td><a><span>左外上 3</span></a></td>
+                            <td></td>
+                            {else /}
+                            <td  {if condition= '$zhiri eq $chuangpu["左外上 3"]["xingming"]'} class="yanse" {/if} > 
+                              {if condition= '$zhiri eq $chuangpu["左外上 3"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['左外上 3']['xuehao']))}">
+                                {$chuangpu['左外上 3']['xingming']}<span>左外上 3</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['左外上 3']['xingming']}<span>左外上 3</span>
+                                </a>
+                                {/if}
+                                </td>
+                            <td></td>
+                            {/if}
+
+                            {if condition = "empty($chuangpu['右外上 9'])"}
+                            <td><a><span>右外上 9</span></a></td>
+                            <td></td>
+                            {else /}
+                            <td  {if condition= '$zhiri eq $chuangpu["右外上 9"]["xingming"]'} class="yanse" {/if} > 
+                              {if condition= '$zhiri eq $chuangpu["右外上 9"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['右外上 9']['xuehao']))}">
+                                {$chuangpu['右外上 9']['xingming']}<span>右外上 9</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['右外上 9']['xingming']}<span>右外上 9</span>
+                                </a>
+                                {/if}
+                                </td>
+                            <td></td>
+                            {/if}
+
+                        </tr>
+                        <tr valign="bottom" height="80">
+                            {if condition = "empty($chuangpu['左外下 4'])"}
+                            <td><a><span>左外下 4</span></a></td>
+                            {else /}
+                            <td {if condition= '$zhiri eq $chuangpu["左外下 4"]["xingming"]'} class="yanse" {/if} >  
+                                {if condition= '$zhiri eq $chuangpu["左外下 4"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['左外下 4']['xuehao']))}">
+                                {$chuangpu['左外下 4']['xingming']}<span>左外下 4</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['左外下 4']['xingming']}<span>左外下 4</span>
+                                </a>
+                                {/if}
+                                </td>
+                            {/if}
+
+                            {if condition = "empty($chuangpu['中下 6'])"}
+                            <td><a><span>中下 6</span></a></td>
+                            {else /}
+                            <td {if condition= '$zhiri eq $chuangpu["中下 6"]["xingming"]'} class="yanse" {/if}>
+                            {if condition= '$zhiri eq $chuangpu["中下 6"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['中下 6']['xuehao']))}">
+                                {$chuangpu['中下 6']['xingming']}<span>中下 6</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['中下 6']['xingming']}<span>中下 6</span>
+                                </a>
+                                {/if}
+                                </td>
+                            {/if}
+
+                            {if condition = "empty($chuangpu['右外下 10'])"}
+                            <td><a><span>右外下 10</span></a></td>
+                            {else /}
+                             <td  {if condition= '$zhiri eq $chuangpu["右外下 10"]["xingming"]'} class="yanse"{/if}> {if condition= '$zhiri eq $chuangpu["右外下 10"]["xingming"]'}
+                                <a href="{:url('home/Center/sushe_add',array('xuehao'=>$chuangpu['右外下 10']['xuehao']))}">
+                                {$chuangpu['右外下 10']['xingming']}<span>右外下 10</span>
+                                </a>
+                                {else /}
+                                 <a>
+                                 {$chuangpu['右外下 10']['xingming']}<span>右外下 10</span>
+                                </a>
+                                {/if}
+                                </td>
+                            {/if}
+
+                        </tr>           
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <ul class="nav">
+              <li ><a href="{:url('home/Center/chayue')}"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></a></li>
+            <li class="active"><a href="{:url('home/Center/sushe')}"><img src="file:///android_asset/img/lan-dengji.png" width="80" height="60" alt=""></a></li>
+            <li ><a href="{:url('home/Center/xuesheng')}""><img src="file:///android_asset/img/hui-xueshengxinxi.png" width="80" height="60" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+</html>

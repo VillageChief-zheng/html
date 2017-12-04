@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+</head>
+<body>
+<style>
+    .pmh{
+        margin: 20px auto;
+    }
+    .pmh tr th{
+        padding: 10px 5px;
+        font-size: 15px;
+        color:#333;
+    }
+    .pmh tr td{
+        padding: 8px 5px;
+        font-size: 14px;
+        color:#666;
+    }
+    .pmh tr th{
+        border-left: 1px solid #ccc !important;
+        border-top: 1px solid #ccc !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+    .pmh tr th:last-child{
+        border-right: 1px solid #ccc !important;
+    }
+    .pmh tr td{
+        border-left: 1px solid #ccc !important;
+        /*border-top: 1px solid #ccc !important;*/
+        border-bottom: 1px solid #ccc !important;
+    }
+    .pmh tr td:last-child{
+        border-right: 1px solid #ccc !important;
+    }
+</style>
+<div class="top">
+    <div class="top-main">
+        <div class="top-l" onclick="callAndroid()">
+            <img src="file:///android_asset/img/back.png" alt="" width="30" height="30">
+        </div>
+        <div class="top-c">
+            <h3>石家庄三十五中学</h3>
+        </div>
+        <script>
+          function callAndroid(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xuesheng?arg1=111&arg2=222";
+          }
+        </script>
+    </div>
+</div>
+  <table class="pmh" align="center" border="1" cellspacing="0" cellpadding="0" width="90%" >
+       <tr>
+           <th>楼层</th>
+           <th>宿舍</th>
+           <th>是否有空铺</th>
+           <th>空铺位置</th>
+
+       </tr>
+      {foreach name="list" item="vo"}
+      <tr>
+          <td>{$vo['louceng']}</td>
+          <td>{$key}</td>
+          <td>{$vo['kong']}</td>
+          <td>{$vo['weizhi']}</td>
+      </tr>
+     {/foreach}
+  </table>
+
+  <div class="footer">
+      <ul class="nav">
+          <li onclick="callAndroid1()"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></li>
+          <li onclick="callAndroid2()"><img src="file:///android_asset/img/hui-dengji.png" width="80" height="60" alt=""></li>
+          <li onclick="callAndroid3()"class="active"><img src="file:///android_asset/img/lan-xueshengxinxi.png" width="80" height="60" alt=""></li>
+          <!-- <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_assetimg/hui-jiaoxue.png" width="80" height="60" alt=""></a></li> -->
+      </ul>
+      <script>
+          function callAndroid1(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://chayue?arg1=111&arg2=222";
+          }
+           function callAndroid2(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://sushe?arg1=111&arg2=222";
+          }
+           function callAndroid3(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xuesheng?arg1=111&arg2=222";
+          }
+        </script>
+  </div>
+</body>
+</html>

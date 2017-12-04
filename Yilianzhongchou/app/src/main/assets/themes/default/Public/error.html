@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>跳转</title>
+    <link rel="stylesheet" href="__ROOT__/css/skipdefeat.css">
+</head>
+
+<body>
+   <div class="skip_box">
+       <div class="box_left">
+           <img src="__ROOT__/images/201709151036.png" alt="">
+       </div>
+       <div class="box_right">
+           <div class="boxr_top">{$msg}</div>
+           <div class="boxr_bottom">
+             <img src="__ROOT__/images/201709151004.gif" alt="">
+             {$wait|default='3'}秒后自动跳转
+           </div>
+       </div>
+       <div class="clear"></div>
+   </div>
+   <div class="skip_bottom"><a href="{$url}">如果没有自动跳转,请点击这里</a></div>
+</body>
+
+</html>

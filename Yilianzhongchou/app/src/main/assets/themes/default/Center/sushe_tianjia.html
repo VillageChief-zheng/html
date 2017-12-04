@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+    <link rel="stylesheet" href="file:///android_asset/css/ion.calendar.css">
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/styles2.css" media="all">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+
+
+
+
+</head>
+<body>
+    <!-- <div class="bg" id="bg_height"> -->
+        <div class="top">
+            <div class="top-main">
+                <div class="top-l">
+                    <a href="javascript:void(0)" onclick="history.go(-1);"> <img src="file:///android_asset/img/back.png" alt="" width="30" height="30"> </a>
+                </div>
+                <div class="top-c">
+                    <h3>石家庄三十五中学</h3>
+                </div>
+            </div>
+        </div>
+        <style>
+
+        body{
+            margin-bottom: 100px;
+        }
+                .grow{
+                    position: relative;
+                    width: 85%;
+                  line-height:30PX;
+                  overflow:hidden;
+                  padding-right: 10%;
+                  text-align:left;
+                  padding-left: 5%;
+                  border: 1px solid #ccc;
+
+                }
+                .grow input{
+                    position:absolute;
+                    width: 20px;
+                    height: 20px;
+                    margin: auto;
+                    top: 5px;
+                    right: 5px;
+                }
+                .h20{
+                    width: 100%;
+                    height: 20px;
+                }
+                </style>
+        <div class="lr_form" >
+         <div class="h20"></div>
+            <form action="{:url('home/Center/sushe_addto')}" method="post">
+              {foreach name="biaozhun" item="biao"}
+                <!-- <fieldset data-role="controlgroup"> -->
+                   <!--  <label for="red">{$biao}</label>
+                    <input type="checkbox" name="favcolor" id="red" > -->
+               <div class="grow">  <input type="checkbox" name="weigui[]" value="{$biao}"> {$biao} </div>
+               <div class="h20"></div>
+                <!-- </fieldset> -->         
+              {/foreach}
+                <input style="width: 60px;
+    height: 30px;
+    margin: 0 auto; 
+    border: 1px solid #0096ff;
+    background-color: #0096ff;
+    color: #fff;
+    display: block;
+    line-height: 30px;
+    border-radius: 5px;" type="submit" data-inline="true" value="提交">
+            </form>
+        </div>
+        <div class="footer">
+                <ul class="nav">
+              <li ><a href="{:url('home/Center/chayue')}"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></a></li>
+            <li class="active"><a href="{:url('home/Center/sushe')}"><img src="file:///android_asset/img/lan-dengji.png" width="80" height="60" alt=""></a></li>
+            <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_asset/img/hui-xueshengxinxi.png" width="80" height="60" alt=""></a></li>
+            </ul>
+        </div>
+    <!-- </div> -->
+</body>
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/moment.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/bootstrap-datetimepicker.js"></script>
+<!-- <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> -->
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("min-height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    /*日历插件*/
+    $(document).ready(function(){
+        // date time picker
+        if($(".iDate.full").length>0){
+            $(".iDate.full").datetimepicker({
+                locale: "zh-cn",
+                format: "YYYY-MM-DD a hh:mm",
+                dayViewHeaderFormat: "YYYY年 MMMM"
+            });
+        }
+        if($(".iDate.date").length>0){
+            $(".iDate.date").datetimepicker({
+                locale:"zh-cn",
+                format:"YYYY-MM-DD",
+                dayViewHeaderFormat:"YYYY年 MMMM"
+            });
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" href="file:///android_asset/css/jiaoyan.css" />
+    <link href="file:///android_asset/css/input-style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="file:///android_asset/css/senselover_banner.css"/>
+</head>
+<body>
+<div class="bg" id="bg_height" style="background-image: url('file:///android_asset/img/bg.jpg')">
+    <div class="public_form">
+        <form action="{:url('home/Index/login')}" method="post" class="registerform">
+            <div class="form-title">
+                <h1>登录</h1>
+            </div>
+            <div class="form-main input-effect">
+                <input type="text" class="inputxt effect-16" name="user" datatype="user" id="user" placeholder="帐号" />
+                <span class="focus-border"></span>
+            </div>
+            <div id="wrong"></div>
+            <div class="form-main input-effect">
+                <input type="password" class="inputxt effect-16" name="password" datatype="password" id="password" placeholder="密码" />
+                <input id="text" type="text" style="display: none;"  placeholder="密码" />
+                <div class="show_pass">
+                    <img src="file:///android_asset/img/show_pass.png" alt="查看密码" id="show_pass"/>
+                </div>
+                <span class="focus-border"></span>
+            </div>
+            <div id="wrong_password"></div>
+            <div class="mima" style="margin-left: 50px;height: 30px;
+line-height: 30px;">
+                <input type="checkbox" checked="checked" name="ji" value="1"> &nbsp;&nbsp;记住密码
+            </div>
+
+            <div class="form-btn" style="text-align: center;">
+
+                <input type="submit" name="submit" id="code" value="登录"  />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="file:///android_asset/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="file:///android_asset/js/Validform_v5.3.2_min.js"></script>
+</body>
+<script>
+        <!--动态取不同屏幕高度 赋值给背景图-->
+        $(function() {
+            var hei = $(window).height();
+            $("#bg_height").css("height", hei);
+        })
+    </script>
+<script>
+/*显示密码*/
+    document.getElementById("show_pass").addEventListener("click",function(){
+        if(document.getElementById("password").style.display=="none"){
+            document.getElementById("password").style.display="block";
+            document.getElementById("text").style.display="none";
+            document.getElementById("password").value=document.getElementById("text").value;
+        }
+        else{
+            document.getElementById("password").style.display="none";
+            document.getElementById("text").style.display="block";
+            document.getElementById("text").value=document.getElementById("password").value;
+        }
+    })
+</script>
+
+<!-- <script>
+    // JavaScript for label effects only
+    $(function() {
+        $('#email').bind('input propertychange', function() {
+            var _value = $(this).val();
+            if(_value != "") {
+                console.log("code=" + _value);
+                $(this).addClass("has-content");
+                if(!_value.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+                    $("#wrong").html("email is wrong ");
+                    $("#pass_wrong").html("pass is wrong ");
+//                        $("#email1").focus();
+                    $("#code").attr("disabled",true);
+                }else{
+                    console.log("邮箱合法" + _value);
+                    $("#wrong").empty();
+                }
+            } else {
+
+                $(this).removeClass("has-content");
+
+            }
+        });
+        //密码校验
+        $('#password').bind('input propertychange', function() {
+
+            var _value = $(this).val();
+
+            if(_value != "") {
+                console.log("code=" + _value);
+
+                $(this).addClass("has-content");
+
+                if(/^[0-9a-zA-Z_]{6,15}$/.test(_value)) {
+                    $("#wrong_password").html("密码符合要求");
+                    $("#code").attr("disabled", false);
+                    return true;
+                } else {
+                    $("#wrong_password").html("密码6-15位，请按要求输入");
+                    $("#changePwd").attr("disabled", "disabled");
+                    return false;
+                }
+
+                //
+                //      if(! _value.match([0-9 | A-Z | a-z]{6,16})) {
+                //                        $("#w").html("ps is wrong ");
+                ////                        $("#email1").focus();
+                //                        $("#code").attr("disabled",true);
+                //
+                //                    }else{
+                //                        console.log("ps" + _value);
+                //                    $("#wrong").empty();
+                //                    }
+            } else {
+
+                $(this).removeClass("has-content");
+
+            }
+        });
+
+    });
+</script> -->
+</html>

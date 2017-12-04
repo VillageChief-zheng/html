@@ -1,0 +1,169 @@
+/*全局样式*/
+*{padding:0;margin:0;}
+div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a{border:0;}
+img{border:none;vertical-align:middle;}
+body{font-family:Tahoma,Arial,Helvetica,"宋体";font-size:16px;text-align:center;background:#FFF;color:#000;}
+html{overflow-y:scroll;}
+ul,ol{list-style-type:none;}
+th,td,input{font-size:16px;}
+h3{font-size:14px;}
+button{border:none;cursor:pointer;font-size:12px;background-color:transparent;}
+select{border-width:1px;_zoom:1;border-style:solid;padding-top:2px;font-size:12px;}
+.clear{clear:both;font-size:1px;height:0;visibility:hidden;line-height:0;}
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+a:link,a:visited{text-decoration:none;color:#333;}
+a:hover,a:active{text-decoration:underline;color:#f60;}
+/*全局样式结束*/
+
+/*背景图*/
+.bg{
+    background-size: 100% auto;
+    height:100%;
+    width:100%;
+    background-color: #f6f6f6;
+}
+.top{
+    height: 60px;
+    width:100%;
+    background-color: #0195ff;
+    color: #fff;
+}
+.top-l{
+    float: left;
+    width: 10%;
+}
+.top-l a{
+    color: #fff;
+}
+.top-c{
+    text-align: center;
+    width: 80%;
+    float: right;
+    margin-right: 10%;
+
+}
+.top-c h3{
+    font-size: 20px!important;
+}
+.top-main{
+    padding-top: 20px
+}
+.lr_form {
+    width: 90%;
+    margin: 0px 5%;
+}
+.lr_form h1{
+    margin: 30px 0px;
+}
+.lr_form input[type=text]{
+    width: 90%;
+    height:40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-size: 18px;
+    color: #5c5d64;
+    border: 1px solid #e2e2e2;
+}
+.lr_form input[type=number]{
+    width: 90%;
+    height:40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-size: 18px;
+    color: #5c5d64;
+    border: 1px solid #e2e2e2;
+}
+.form-type{
+    margin: 20px 0px;
+}
+.form-btn input[type=submit]{
+    width: 80%;
+    height:40px;
+    border-radius: 8px;
+    background-color: #0195ff;
+    color: #fff;
+    /*position: fixed;*/
+    bottom: 100px;
+    left:10%;
+    font-size: 20px;
+}
+.footer{
+    height:70px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0px;
+    left:0;
+}
+.footer ul li{
+    float: left;
+    padding: 5px 0px;
+    width: 33.3%;
+}
+.active{
+    background-color: #f6f6f6;
+}
+.find_xs ul li{
+    float: left;
+    margin: 30px 1%;
+}
+.find_xs ul li a{
+    border-radius: 5px;
+    background-color: #3d8fd1;
+    color: #fff;
+    display: block;
+    width: 130px;
+    overflow: hidden;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+
+}
+.find_xs{
+    width: 90%;
+    margin: 0px 5%;
+    height:300px;
+}
+.find_xs table tr td{
+    /*border: 1px solid;*/
+    font-size: 20px;
+    border-radius: 10px;
+    /*background-color: #0195ff;*/
+}
+.find_xs table tr td a{
+    color: #333;
+}
+.find_xs table tr{
+    /*height:50px;*/
+}
+.form-btn input[type=button]{
+    width: 80%;
+    height:40px;
+    border-radius: 8px;
+    background-color: #0195ff;
+    color: #fff;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+.info_table tr{
+    display: block;
+    margin: 15px;
+    height: 34px;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+}
+.info_table tr td{
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+}
+.add_info{
+    width: 90%;
+    height: 200px;
+    margin: 20px 5% 15px 5%;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+}

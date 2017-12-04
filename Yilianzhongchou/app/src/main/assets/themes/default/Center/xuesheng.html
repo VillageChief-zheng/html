@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{$seo['biaoti']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$seo['key']}"/>
+    <meta name="description" content="{$seo['nei']}"/>
+    <link rel="stylesheet" type="text/css" href="file:///android_asset/css/style.css"/>
+
+</head>
+<body>
+<div class="bg" id="bg_height">
+    <div class="top">
+        <div class="top-main">
+            <div class="top-l">
+                <a href="javascript:void(0)" onclick="history.go(-1);"> <img src="file:///android_asset/img/back.png" alt="" width="30" height="30"> </a>
+            </div>
+            <div class="top-c">
+                <h3>石家庄三十五中学</h3>
+            </div>
+            <style>
+                    .top{
+                        position: relative;
+                    }
+                    .shezhi{
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;
+                        right: 10px;
+                        margin: auto;
+                        bottom:10px;
+
+                    }
+                    .shezhi a img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                </style>
+            <!--<div class="shezhi">-->
+               <!--<img src="file:///android_asset/img/szsz.png" alt="">-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="lr_form">
+        <h1 style="margin: 80px 0px">学生信息</h1>
+        <div onclick="callAndroid4()" class="form-btn"style="width: 100%; height: 40px;border-radius: 8px;background-color: #0195ff;color: #fff;font-size: 20px;margin: 10px 0px;display: block;line-height: 40px;margin:10px auto">学生信息录入
+        </div>
+        <div class="form-btn" style="width: 100%; height: 40px;border-radius: 8px;background-color: #0195ff;color: #fff;font-size: 20px;margin: 10px 0px;display: block;line-height: 40px;margin:10px auto" onclick="callAndroid5()">
+            学生信息列表
+        </div>
+        <div onclick="callAndroid6()" class="form-btn" style="width: 100%; height: 40px;border-radius: 8px;background-color: #0195ff;color: #fff;font-size: 20px;margin: 10px 0px;display: block;line-height: 40px;margin:10px auto">
+             宿舍空铺查询
+        </div>
+        <script>
+          function callAndroid4(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xs_lr?arg1=111&arg2=222";
+          }
+           function callAndroid5(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xs_lb?arg1=111&arg2=222";
+          }
+           function callAndroid6(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://kongpu?arg1=111&arg2=222";
+          }
+        </script>
+    </div>
+    <div class="footer">
+        <ul class="nav">
+            <li onclick="callAndroid1()"><img src="file:///android_asset/img/hui-chayue.png" width="80" height="60" alt=""></li>
+            <li onclick="callAndroid2()"><img src="file:///android_asset/img/hui-dengji.png" width="80" height="60" alt=""></li>
+            <li onclick="callAndroid3()"class="active"><img src="file:///android_asset/img/lan-xueshengxinxi.png" width="80" height="60" alt=""></li>
+            <!-- <li ><a href="{:url('home/Center/xuesheng')}"><img src="file:///android_assetimg/hui-jiaoxue.png" width="80" height="60" alt=""></a></li> -->
+        </ul>
+        <script>
+          function callAndroid1(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://chayue?arg1=111&arg2=222";
+          }
+           function callAndroid2(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://sushe?arg1=111&arg2=222";
+          }
+           function callAndroid3(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://xuesheng?arg1=111&arg2=222";
+          }
+        </script>
+    </div>
+</div>
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    <!--动态取不同屏幕高度 赋值给背景图-->
+    $(function() {
+        var hei = $(window).height();
+        $("#bg_height").css("height", hei);
+    })
+</script>
+<script>
+    $(document).ready(function (){
+        $(".nav li").each(function(index){
+            $(this).click(function(){
+                $(".nav li").removeClass("active");
+                $(".nav li").eq(index).addClass("active");
+                $(".nav li ").children().eq(index).css("color","#FFF!important");
+
+            });
+        });
+    });
+</script>
+</html>
